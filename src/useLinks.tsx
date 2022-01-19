@@ -53,6 +53,8 @@ type RemoveAction = {
 
 type Action = AddAction | EditAction | RemoveAction
 
+// This will be converted to react query state most likely
+
 function linkReducer(state: Array<LinkData>, action: Action) {
     switch (action.type) {
         case 'ADD_LINK': {
