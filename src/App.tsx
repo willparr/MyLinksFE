@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Button, Container } from '@mui/material'
+import { useState } from 'react'
+import './App.css'
+import { LinkLayout } from './Link'
+import { LinkProvider } from './useLinks'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [isAdmin, setIsAdmin] = useState(false)
+    return (
+        <Container sx={{ marginTop: '6vh' }}>
+            <Button onClick={() => setIsAdmin(!isAdmin)} />
+            <LinkProvider>
+                <LinkLayout />
+            </LinkProvider>
+        </Container>
+    )
 }
 
-export default App;
+export default App
