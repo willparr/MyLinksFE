@@ -14,6 +14,7 @@ module.exports = {
         'prettier/prettier': ['error'],
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'warn',
+        'import/no-default-export': 'error',
     },
     parser: '@typescript-eslint/parser',
     ignorePatterns: ['src/**/*.test.ts', 'src/frontend/generated/*'],
