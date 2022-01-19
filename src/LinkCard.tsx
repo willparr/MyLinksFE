@@ -11,6 +11,7 @@ export type LinkCardProps = {
     handleEditTitle: (e: string, id: string) => void
 }
 
+// TODO: right now this is only for admin users, we'll need to figure something out for actual display
 export function LinkCard({
     linkTitle,
     link,
