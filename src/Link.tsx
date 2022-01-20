@@ -1,4 +1,5 @@
 import { Button, Grid } from '@mui/material'
+import { useUserProfile } from './hooks/useUserProfile'
 import { LinkCard } from './LinkCard'
 import { Actions, useLinks } from './useLinks'
 
@@ -12,6 +13,8 @@ export function LinkLayout() {
     const { state, dispatch } = useLinks()
 
     const castState = state as Array<LinkObj>
+    const { data, isLoading } = useUserProfile()
+    console.log(data?.user.user)
 
     function handleRemoveLink(id: string) {
         dispatch({
@@ -64,6 +67,11 @@ export function LinkLayout() {
 
     return (
         <Grid container spacing={2}>
+            {!isLoading && (
+                <Grid item xs={12}>
+                    <h2>{data?.user.user}</h2>
+                </Grid>
+            )}
             <Grid item xs={12}>
                 <Button onClick={handleAddCardContext} variant="outlined">
                     Add a new link with context
